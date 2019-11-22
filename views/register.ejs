@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="login-page" style="margin-top: 50px">
+  <div class="form">
+    <form class="login-form" action="/register" method="POST">
+      <input class="form-control" type="text" name="username" placeholder="Username"/>
+      <input class="form-control" type="text" name="email" placeholder="Email Address"/>
+      <input class="form-control" type="text" name="fullname" placeholder="Fullname"/> 
+      <input class="form-control" type="password" name="password" placeholder="Password"/>
+      <input class="form-control" type="password" name="passwordConfirm" placeholder="Password Confirmation"/>
+      <button type="submit">Create</button>
+      <p class="message">Already registered? <a href="/login">Sign In</a></p>
+      <hr>
+      <p class="message"><a href="/">Home Page</a></p>
+    </form>
+    <hr>
+
+  <div class="facebook">
+  <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+    <i class="fab fa-facebook"></i>
+    Sign In with Facebook
+  </a>
+  </div>
+  <div class="google">
+  <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+    <i class="fab fa-google"></i>
+    Sign In with Google
+  </a>
+  </div>
+</div>
+  
+<footer style="text-align: center; margin-top: 40px; margin-bottom: 20px; color: rgb(247, 247, 247)">
+  <h7 >Copyright©2019 Emr4706Ny</h7>
+</footer>
+
+<%- include('partials/header') %>

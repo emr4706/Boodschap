@@ -1,0 +1,228 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm pb-0 ">
+    <a class="navbar-brand" style="color:#3e64ff; font-family: Helvetica Neue; font-size: 35px;" href="#">BoodSchap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-center mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
+
+<body style="background-color: #3e64ff">
+
+
+
+    <div class="container-fluid gedf-wrapper shadow-sm pb-0" style="margin-top: 85px">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h7 text-muted">User Name :</div>
+                        <div class="h5" style="color: #38A1F3">@<%= userInf.username %></div>
+
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5">5.2342</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Following</div>
+                            <div class="h5">6758</div>
+                        </li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 gedf-main shadow-sm pb-0">
+                <!--- \\\\\\\Post-->
+
+                <div class="card gedf-card shadow-sm pb-0" style="margin-bottom: 10px">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab"
+                                    aria-controls="posts" aria-selected="true">Make a publication</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
+                                    aria-selected="false" href="#images">Images</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="" style="text-align: center" action="/posts" method="POST">
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="posts" role="tabpanel"
+                                    aria-labelledby="posts-tab">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="message">post</label>
+                                        <textarea class="form-control" name="postBody" id="message" rows="3"
+                                            placeholder="What are you thinking?"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile" />
+                                            <label class="custom-file-label" for="customFile">Upload image</label>
+                                        </div>
+                                    </div>
+                                    <div class="py-4"></div>
+                                </div>
+                            </div>
+                            <div class="btn-toolbar justify-content-between">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">share</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
+
+                <!-- Post /////-->
+
+                <!--- \\\\\\\Post-->
+                <% userWithPosts.slice().reverse().forEach(post => { %>
+                <% if (post.content !== ''){ %>
+                <div class="card gedf-card shadow-sm pb-0" style="margin-bottom: 10px">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center" style="height: 30px">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="" />
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0" style="color: #38A1F3">@<%= post.user.username %></div>
+                                    <div class="h7 text-muted"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2">
+                            <i class="fa fa-clock-o">
+                                <%let postTime= new moment().diff(post.createdAt); if(postTime>60000 && postTime<3600000){ %>
+                                <%= (postTime/60000).toFixed(0); %> min ago
+                                <%}else{ if (postTime>=3600000 && postTime<86400000){%>
+                                <%= (postTime/3600000).toFixed(0); %> hour ago
+                                <%}else{ if(postTime>=86400000){ %>
+                                <%= (postTime/86400000).toFixed(0); %> day ago
+                                <%}else{ %>
+                                a while ago
+                                <% }}}%>
+                            </i>
+                        </div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">
+                            </h5>
+                        </a>
+
+                        <p class="card-text">
+                            <%= post.content %>
+                        </p>
+                    </div>
+                    <div class="card-footer" style="height: 60px">
+                        <a href="/likes/<%= post._id %>" class="card-link"><i class="far fa-thumbs-up"></i></a>
+                        <a href="#" class="" style="margin-left: 5px"><%= post.likes %></a>
+
+                        <a href="/unlike/<%= post._id %>" class="card-link" style="margin-left: 50px"><i
+                                class="far fa-thumbs-down"></i></a>
+                        <a href="#" class="" style="margin-left: 5px"><%= post.unlike %></a>
+
+                        <a href="#" class="card-link float-right" style="margin-right: 30px"><i
+                                class="fa fa-comment"></i> Comment</a>
+                        <% if (userInf.id == post.user._id){ %>
+                        <a href="/post/delete/<%= post._id%>" class="card-link float-right" style="margin-right: 30px;">
+                            <i class="far fa-trash-alt"></i></i> Delete</a>
+
+                        <% } %>
+
+                    </div>
+                </div>
+                <% } %>
+                <% }) %>
+
+            </div>
+            <div class="col-md-3 shadow-sm pb-0">
+                <div class="card gedf-card shadow-sm pb-0">
+                    <div class="card-body shadow-sm pb-0">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <div class="card gedf-card shadow-sm pb-0" style="margin-top: 10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script>
+    $("#searchInput").on("keyup", function () {
+    var searchList = $(this).val().toLowerCase();
+    $(".card-body").filter(function () {
+    $(this).toggle($(this).text().toLowerCase().indexOf(searchList) > -1)
+    });
+    });
+    </script> 
+
+
+    <footer style="text-align: center; margin-top: 50px; color: rgb(247, 247, 247);">
+        <h7>Copyright©2019 Emr4706Ny</h7>
+    </footer>
+</body>
