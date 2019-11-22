@@ -1,7 +1,5 @@
 
 
-Heroku Link: https://salty-river-48152.herokuapp.com/
-
 
 ## The User Story of Wall Project
 
